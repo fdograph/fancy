@@ -1,8 +1,17 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import React from 'react';
+import type { AppProps } from 'next/app';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+import '../styles/globals.css';
+import Head from "next/head";
 
-export default MyApp
+const MainApplication: React.FC<AppProps> = ({ Component, pageProps }) => {
+  return <>
+    <Head>
+      <title>{pageProps.title}</title>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <Component {...pageProps} />
+  </>;
+};
+
+export default MainApplication

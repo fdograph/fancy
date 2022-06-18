@@ -1,0 +1,27 @@
+.Container {
+    @apply flex flex-col relative;
+}
+
+.ScrollableSection {
+    @apply flex relative;
+}
+
+.ScrollableSection > .StaticContent,
+.ScrollableSection > .ScrollingContent {
+    @apply flex w-1/2;
+}
+
+.StaticContent {
+    @apply sticky top-0 h-screen relative;
+}
+
+.StaticContent::after {
+    content: attr(data-progress);
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+}
+
+.ScrollingContent {
+}
