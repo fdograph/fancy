@@ -1,67 +1,32 @@
-import type { NextPage } from 'next'
-import Styles from '../styles/Home.module.css'
-import {
-  FancyContent,
-  FancyScrollableSection,
-  FancyScrollingContent,
-  FancyStaticContent
-} from "../components/FancyContent/FancyContent";
-import classNames from "classnames";
+import type { NextPage } from "next";
+import Styles from "../styles/Home.module.css";
+import { FancyContent } from "../components/FancyContent/FancyContent";
+import { PersonalDetails } from "../components/PersonalDetails/PersonalDetails";
+import { Horizon } from "../components/Animations/Horizon/Horizon";
+import { Rays } from "../components/Animations/Rays/Rays";
 
 interface HomeStaticProps {
   title: string;
+  description: string;
 }
 
-export const getStaticProps = async (): Promise<{props: HomeStaticProps}> => ({
+export const getStaticProps = async (): Promise<{
+  props: HomeStaticProps;
+}> => ({
   props: {
-    title: 'Fancy content Visualizer'
+    title: "Fernando Silva Müller - Fullstack software engineer",
+    description: "",
   },
 });
 
+const Home: NextPage<HomeStaticProps> = (props) => (
+  <div className={Styles.MainWrapper}>
+    <PersonalDetails />
+    <FancyContent>
+      <Rays />
+      <Horizon />
+    </FancyContent>
+  </div>
+);
 
-const Home: NextPage<HomeStaticProps> = (props) => {
-  return (
-    <main className={Styles.Main}>
-      <FancyContent>
-        <FancyScrollableSection>
-          <FancyScrollingContent>
-            <div className={classNames(Styles.LettersContainer, Styles.ToBottomGradient)}>
-              <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
-            </div>
-          </FancyScrollingContent>
-          <FancyStaticContent className={classNames(Styles.StaticFullPage, Styles.ToTopGradient)}>
-            <div className={Styles.InnerContent}>
-              <h1 className={Styles.MainHeading}>Fancy content Visualizer</h1>
-            </div>
-          </FancyStaticContent>
-        </FancyScrollableSection>
-        <FancyScrollableSection>
-          <FancyStaticContent className={classNames(Styles.StaticFullPage, Styles.ToTopGradient)}>
-            <div className={Styles.InnerContent}>
-              <h1 className={Styles.MainHeading}>Fancy content Visualizer</h1>
-            </div>
-          </FancyStaticContent>
-          <FancyScrollingContent>
-            <div className={classNames(Styles.LettersContainer, Styles.ToBottomGradient)}>
-              <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
-            </div>
-          </FancyScrollingContent>
-        </FancyScrollableSection>
-        <FancyScrollableSection>
-          <FancyScrollingContent>
-            <div className={classNames(Styles.LettersContainer, Styles.ToBottomGradient)}>
-              <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
-            </div>
-          </FancyScrollingContent>
-          <FancyStaticContent className={classNames(Styles.StaticFullPage, Styles.ToTopGradient)}>
-            <div className={Styles.InnerContent}>
-              <h1 className={Styles.MainHeading}>Fancy content Visualizer</h1>
-            </div>
-          </FancyStaticContent>
-        </FancyScrollableSection>
-      </FancyContent>
-    </main>
-  )
-}
-
-export default Home
+export default Home;

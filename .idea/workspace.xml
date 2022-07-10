@@ -2,13 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e5b6e20-914c-4ffe-9c31-8b77b245a399" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/FancyContent/FancyContent.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/FancyContent/FancyContent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Animations/Horizon/Horizon.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Animations/Horizon/Horizon.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Animations/Horizon/HorizonAnimation.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Animations/Horizon/HorizonAnimation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Animations/Rays/Rays.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Animations/Rays/Rays.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Animations/Rays/RaysAnimation.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Animations/Rays/RaysAnimation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/CubeGrid/CubeGrid.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/CubeGrid/CubeGrid.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/CubeRotation/CubeRotation.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/CubeRotation/CubeRotation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/PersonalDetails/PersonalDetails.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/PersonalDetails/PersonalDetails.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/utls.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FancyContent/FancyContent.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/FancyContent/FancyContent.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FancyContent/FancyContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FancyContent/FancyContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/Home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Home.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,20 +44,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/fernandosilva/projects/fancy",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "settings.editor.selected.configurable": "com.github.copilot.settings.ApplicationConfigurable",
-    "ts.external.directory.path": "/Users/fernandosilva/projects/fancy/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/fernandosilva/projects/fancy&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/fernandosilva/projects/fancy/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/fernandosilva/projects/fancy/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -69,7 +89,17 @@
       <workItem from="1655542341421" duration="15000" />
       <workItem from="1655542363135" duration="14000" />
       <workItem from="1655542385054" duration="779000" />
-      <workItem from="1655543179982" duration="11344000" />
+      <workItem from="1655543179982" duration="17329000" />
+      <workItem from="1655569192171" duration="2463000" />
+      <workItem from="1655573910226" duration="5726000" />
+      <workItem from="1655638898667" duration="10510000" />
+      <workItem from="1655652584555" duration="5997000" />
+      <workItem from="1655664628743" duration="11656000" />
+      <workItem from="1655830754173" duration="2161000" />
+      <workItem from="1655835522482" duration="1683000" />
+      <workItem from="1657462292497" duration="26000" />
+      <workItem from="1657462335751" duration="37000" />
+      <workItem from="1657464428984" duration="1034000" />
     </task>
     <servers />
   </component>

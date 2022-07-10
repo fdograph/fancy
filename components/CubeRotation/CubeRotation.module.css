@@ -1,0 +1,56 @@
+.Container {
+    --progress: 0;
+    @apply flex items-center justify-center w-full p-4;
+    perspective:700px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg);
+    }
+}
+
+.Cube {
+    --cube-size: 130px;
+    --duration: 5000ms;
+    @apply relative w-[var(--cube-size)] h-[var(--cube-size)];
+    transform-style: preserve-3d;
+    animation-name: rotate;
+    animation-duration: var(--duration);
+    animation-play-state: paused;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: calc((var(--progress) / 100) * var(--duration) * -1);
+}
+
+.Face {
+    @apply w-full h-full bg-red-600 border-2 absolute;
+}
+
+.FrontFace {
+    @apply bg-red-600;
+    transform: translateZ(calc(var(--cube-size) / 2));
+}
+.BackFace {
+    @apply bg-red-600;
+    transform: translateZ(calc(var(--cube-size) / 2 * -1)) rotateY(180deg);
+}
+.LeftFace {
+    @apply bg-lime-500;
+    transform: translateX(calc(var(--cube-size) / 2 * -1)) rotateY(-90deg);
+}
+.RightFace {
+    @apply bg-lime-500;
+    transform: translateX(calc(var(--cube-size) / 2)) rotateY(90deg);
+}
+.TopFace {
+    @apply bg-blue-700;
+    transform: translateY(calc(var(--cube-size) / 2 * -1)) rotateX(90deg);
+}
+.BottomFace {
+    @apply bg-blue-700;
+    transform: translateY(calc(var(--cube-size) / 2)) rotateX(-90deg);
+}

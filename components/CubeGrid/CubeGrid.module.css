@@ -1,0 +1,3 @@
+.CubeGrid {
+    @apply grid grid-cols-4 grid-rows-4 flex-1 w-full h-full;
+}

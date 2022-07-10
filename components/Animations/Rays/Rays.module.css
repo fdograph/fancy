@@ -1,0 +1,7 @@
+.Wrapper {
+    @apply h-[400vh];
+}
+
+.StaticFullPage {
+    @apply h-screen w-full flex-1 flex;
+}

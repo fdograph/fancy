@@ -1,0 +1,31 @@
+.MainContainer {
+    @apply flex flex-col w-full p-10 bg-transparent text-neutral-200 fixed z-50;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.MainHeading {
+    @apply font-bold uppercase;
+    font-size: min(13vw, 18vmin);
+    line-height: 1;
+    text-transform: uppercase;
+    text-shadow: 0.1em 0.1em 0 rgb(0 0 0 / 30%);
+}
+
+.SecondaryHeading {
+    font-size: 6vmin;
+    line-height: 1.8;
+}
+
+.ContactContainer {
+    @apply flex gap-4;
+}
+
+.ContactContainer a {
+    @apply block underline;
+}
+
+.ContactContainer a:hover,
+.ContactContainer a:active{
+    @apply no-underline text-amber-300;
+}

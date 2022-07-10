@@ -1,17 +1,11 @@
-.Main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-height: 100vh;
+.MainWrapper {
+  @apply flex flex-1 flex-col w-full min-h-screen;
 }
 
-.StaticFullPage {
-  @apply h-screen;
-}
+
 
 .InnerContent {
-  @apply flex items-center justify-center w-full p-4;
+  @apply flex flex-col justify-center w-full p-4;
 }
 
 .RedInnerContent {
@@ -23,7 +17,8 @@
 }
 
 .LettersContainer {
-  @apply flex items-center justify-center w-full p-4;
+  @apply flex items-center justify-center p-4;
+  min-height: 600vh;
 }
 
 
@@ -34,9 +29,15 @@
 }
 
 .ToBottomGradient {
-  @apply bg-gradient-to-b from-neutral-900 to-red-600;
+  /*@apply bg-gradient-to-b from-neutral-900 to-red-600;*/
+  @apply bg-red-600
 }
 
 .ToTopGradient {
-  @apply bg-gradient-to-b to-neutral-900 from-red-600;
+  /*@apply bg-gradient-to-b to-neutral-900 from-red-600;*/
+  @apply bg-neutral-900;
+}
+
+.TallSection {
+  height: 700vh;
 }
