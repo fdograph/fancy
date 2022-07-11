@@ -10,7 +10,7 @@ export const CubeRotation: React.FC<CubeRotationProps> = ({ progress }) => {
   return (
     <div
       className={Styles.Container}
-      style={{ ["--progress" as any]: `${progress}` }}
+      style={{ ["--progress" as any]: progress }}
     >
       <div className={Styles.Cube}>
         <div className={classNames(Styles.Face, Styles.TopFace)} />

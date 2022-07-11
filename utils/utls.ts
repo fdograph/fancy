@@ -24,7 +24,7 @@ export const lerp = (start: number, end: number, value: number) => {
 };
 
 export const invLerp = (start: number, end: number, value: number) =>
-  clamp((value - start) / (end - value));
+  (value - start) / (end - start);
 
 export const rand = (min: number, max: number) =>
   Math.random() * (max - min) + min;

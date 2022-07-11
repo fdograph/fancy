@@ -1,0 +1,77 @@
+@keyframes FadeToBlack {
+    0% {
+        background: rgba(0, 0, 0, 0);
+    }
+    100% {
+        @apply bg-neutral-900;
+    }
+}
+
+@keyframes RayEffect {
+    0% {
+        width: 0;
+        left: var(--base-left);
+    }
+    25% {
+        left: calc(var(--base-left) + 60vmin * var(--sign) * -1);
+    }
+    50% {
+        width: 60vmin;
+    }
+    75% {
+        left: calc(var(--base-left) + 60vmin * var(--sign));
+    }
+    100% {
+        width: 0;
+        left: var(--base-left);
+    }
+}
+
+.Scene {
+    --progress: 0;
+    @apply block w-full h-full relative overflow-hidden bg-gradient-to-b from-rose-600 to-purple-600;
+}
+
+.Inner {
+    @apply block w-full h-full relative overflow-hidden;
+
+    --duration: 10000;
+    --delay: 0;
+    --duration-ms: calc(var(--duration) * 1ms);
+    --delay-ms: calc(var(--delay) * 1ms);
+    --duration-progress: calc((var(--progress) / 100) * var(--duration-ms));
+    animation-name: FadeToBlack;
+    animation-duration: calc(var(--duration-ms) - var(--delay-ms));
+    animation-timing-function: linear;
+    animation-play-state: paused;
+    animation-fill-mode: both;
+    animation-delay: calc((var(--duration-progress) * -1) + var(--delay-ms));
+}
+
+.Ray {
+    --count: 15;
+    --index: 0;
+    --rand: 0;
+    --sign: 1;
+    --left: 0;
+    --base-left: calc(var(--left) * 1%);
+    --duration: 10000;
+    --delay: calc(var(--rand) * var(--index));
+    --duration-ms: calc(var(--duration) * 1ms);
+    --delay-ms: calc(var(--delay) * 1ms);
+    --duration-progress: calc((var(--progress) / 100) * var(--duration-ms));
+
+    @apply absolute h-full top-0;
+
+    will-change: width, left;
+    transform: translateZ(0);
+    transform-origin: center center;
+    left: var(--base-left);
+    width: 0;
+    animation-name: RayEffect;
+    animation-duration: calc(var(--duration-ms) - var(--delay-ms));
+    animation-timing-function: linear;
+    animation-play-state: paused;
+    animation-fill-mode: both;
+    animation-delay: calc((var(--duration-progress) * -1) + var(--delay-ms));
+}

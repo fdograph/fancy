@@ -2,6 +2,7 @@ import React from "react";
 
 import Styles from "./HorizonAnimation.module.css";
 import classNames from "classnames";
+import { invLerp } from "../../../utils/utls";
 
 const items = [
   { bgClass: "bg-red-600" },
@@ -27,15 +28,7 @@ export const HorizonAnimation: React.FC<{ progress: number }> = ({
   const itemsToShow = items.map((data, index) => {
     const start = (100 / items.length) * index;
     const end = (100 / items.length) * (index + 1);
-    let itemProgress = 0;
-
-    if (progress < start) {
-      itemProgress = 0;
-    } else if (progress >= start && progress <= end) {
-      itemProgress = (progress - start) / (end - start);
-    } else if (progress > end) {
-      itemProgress = 1;
-    }
+    const itemProgress = invLerp(start, end, progress);
 
     return (
       <div

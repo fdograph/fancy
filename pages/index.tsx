@@ -23,8 +23,8 @@ const Home: NextPage<HomeStaticProps> = (props) => (
   <div className={Styles.MainWrapper}>
     <PersonalDetails />
     <FancyContent>
-      <Rays />
       <Horizon />
+      <Rays />
     </FancyContent>
   </div>
 );

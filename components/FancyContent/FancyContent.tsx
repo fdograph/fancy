@@ -2,6 +2,7 @@ import React, { useCallback, useEffect } from "react";
 import classNames from "classnames";
 
 import Styles from "./FancyContent.module.css";
+import { invLerp } from "../../utils/utls";
 
 export interface FancyContentProps extends React.PropsWithChildren {
   className?: string;
@@ -10,7 +11,6 @@ export interface FancyContentProps extends React.PropsWithChildren {
 
 export interface FancyDynamicContentProps {
   progress: number;
-  fullProgress: number;
   hasStarted: boolean;
   hasFinished: boolean;
   isAnimating: boolean;
@@ -19,15 +19,16 @@ export interface FancyDynamicContentProps {
 export interface FancyStaticContentProps {
   className?: string;
   content: (props: FancyDynamicContentProps) => React.ReactNode;
+  showDebugLog?: boolean;
 }
 
 export const FancyStaticContent: React.FC<FancyStaticContentProps> = ({
   className,
   content,
+  showDebugLog = false,
 }) => {
   const ref = React.useRef<HTMLDivElement>(null);
   const [progress, setProgress] = React.useState(0);
-  const [fullProgress, setFullProgress] = React.useState(0);
   const [hasStarted, setHasStarted] = React.useState(false);
   const [hasFinished, setHasFinished] = React.useState(false);
   const [isAnimating, setIsAnimating] = React.useState(false);
@@ -37,18 +38,25 @@ export const FancyStaticContent: React.FC<FancyStaticContentProps> = ({
     }
 
     const parentRect = ref.current.parentElement!.getBoundingClientRect();
-    const rawProgress =
-      ((parentRect.top * 100) /
-        (parentRect.height - ref.current.offsetHeight)) *
-      -1;
-    const progress = Math.max(0, Math.min(100, rawProgress));
+    const correctedTop = Math.max(0, parentRect.top * -1);
+    const correctedHeight = parentRect.height - ref.current.offsetHeight;
+    const lerpResult = invLerp(0, correctedHeight, correctedTop);
+    const progress = lerpResult * 100;
+
+    if (showDebugLog) {
+      console.log({
+        correctedTop,
+        correctedHeight,
+        progress,
+        lerpResult,
+      });
+    }
 
     setProgress(progress);
-    setFullProgress(rawProgress);
     setHasStarted(progress > 0);
     setHasFinished(progress === 100);
     setIsAnimating(progress > 0 && progress < 100);
-  }, []);
+  }, [showDebugLog]);
   const onScroll = useCallback(
     () =>
       requestAnimationFrame(() => {
@@ -70,7 +78,6 @@ export const FancyStaticContent: React.FC<FancyStaticContentProps> = ({
     <div ref={ref} className={classNames(Styles.StaticContent, className)}>
       {content({
         progress,
-        fullProgress,
         hasStarted,
         hasFinished,
         isAnimating,
