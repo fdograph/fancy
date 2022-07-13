@@ -4,6 +4,7 @@ import { FancyContent } from "../components/FancyContent/FancyContent";
 import { PersonalDetails } from "../components/PersonalDetails/PersonalDetails";
 import { Horizon } from "../components/Animations/Horizon/Horizon";
 import { Rays } from "../components/Animations/Rays/Rays";
+import { SpaceShips } from "../components/Animations/SpaceShips/SpaceShips";
 
 interface HomeStaticProps {
   title: string;
@@ -25,6 +26,7 @@ const Home: NextPage<HomeStaticProps> = (props) => (
     <FancyContent>
       <Horizon />
       <Rays />
+      <SpaceShips />
     </FancyContent>
   </div>
 );

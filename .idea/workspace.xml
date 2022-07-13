@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e5b6e20-914c-4ffe-9c31-8b77b245a399" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/components/Animations/SpaceShips/SpaceShips.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Animations/SpaceShips/SpaceShips.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Animations/SpaceShips/SpaceShipsAnimation.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Animations/SpaceShips/SpaceShipsAnimation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Animations/Horizon/Horizon.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/Animations/Horizon/Horizon.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Animations/Horizon/HorizonAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Animations/Horizon/HorizonAnimation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Animations/Rays/RaysAnimation.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/Animations/Rays/RaysAnimation.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Animations/Rays/RaysAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Animations/Rays/RaysAnimation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/CubeRotation/CubeRotation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/CubeRotation/CubeRotation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/FancyContent/FancyContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/FancyContent/FancyContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/hello.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/utls.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utls.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +33,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/fernandosilva/projects/fancy&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/fernandosilva/projects/fancy/components/Animations/SpaceShips&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -45,6 +45,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components/Animations/SpaceShips" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -85,7 +90,11 @@
       <workItem from="1657462335751" duration="37000" />
       <workItem from="1657464428984" duration="3883000" />
       <workItem from="1657475010474" duration="3662000" />
-      <workItem from="1657561306904" duration="6295000" />
+      <workItem from="1657561306904" duration="6804000" />
+      <workItem from="1657571364530" duration="1302000" />
+      <workItem from="1657648124543" duration="1397000" />
+      <workItem from="1657654720796" duration="5029000" />
+      <workItem from="1657730887202" duration="5210000" />
     </task>
     <servers />
   </component>

@@ -39,12 +39,16 @@ export const FancyStaticContent: React.FC<FancyStaticContentProps> = ({
 
     const parentRect = ref.current.parentElement!.getBoundingClientRect();
     const correctedTop = Math.max(0, parentRect.top * -1);
-    const correctedHeight = parentRect.height - ref.current.offsetHeight;
+    const correctedHeight =
+      parentRect.height - ref.current.offsetHeight || ref.current.offsetHeight;
     const lerpResult = invLerp(0, correctedHeight, correctedTop);
     const progress = lerpResult * 100;
 
     if (showDebugLog) {
       console.log({
+        top: parentRect.top,
+        height: parentRect.height,
+        offsetHeight: ref.current.offsetHeight,
         correctedTop,
         correctedHeight,
         progress,
