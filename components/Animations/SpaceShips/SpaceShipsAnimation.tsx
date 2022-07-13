@@ -3,12 +3,6 @@ import Styles from "./SpaceShipsAnimation.module.css";
 import { createPoint, lerp, rand } from "../../../utils/utls";
 import classNames from "classnames";
 
-const shipsSeeds = Array.from({ length: 20 }, (_, i) => ({
-  a: rand(0, 100),
-  b: rand(0, 1),
-  c: rand(0, 1),
-}));
-
 export const SpaceShipsAnimation: React.FC<{ progress: number }> = ({
   progress,
 }) => {
@@ -28,7 +22,13 @@ export const SpaceShipsAnimation: React.FC<{ progress: number }> = ({
       return [];
     }
 
-    return shipsSeeds;
+    const wMax = Math.max(windowSize.wHeight, windowSize.wWidth);
+
+    return Array.from({ length: Math.floor(wMax / 60) }, (_, i) => ({
+      a: rand(0, 100),
+      b: rand(0, 1),
+      c: rand(0, 1),
+    }));
   }, [windowSize]);
 
   const ships = seeds.map((seed, idx) => {
