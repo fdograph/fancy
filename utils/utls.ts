@@ -19,6 +19,9 @@ export const calculateY = (
 export const clamp = (value: number, min = 0, max = 1) =>
   Math.min(max, Math.max(min, value));
 
+export const toNearestInterval = (value: number, interval: number) =>
+  Math.round(value / interval) * interval;
+
 export const lerp = (start: number, end: number, value: number) => {
   return (1 - value) * start + value * end;
 };
@@ -50,10 +53,10 @@ export const projectPoint = (
 export const createLine = (
   origin: Point,
   length: number,
-  angle = 0
+  angleInDegrees = 0
 ): LineCoords => ({
   a: origin,
-  b: projectPoint(origin, length, angle),
+  b: projectPoint(origin, length, toRadians(angleInDegrees * -1)),
 });
 
 export function toDegrees(angleInRadians: number) {

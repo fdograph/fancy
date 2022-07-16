@@ -61,13 +61,7 @@ export const FancyStaticContent: React.FC<FancyStaticContentProps> = ({
     setHasFinished(progress === 100);
     setIsAnimating(progress > 0 && progress < 100);
   }, [showDebugLog]);
-  const onScroll = useCallback(
-    () =>
-      requestAnimationFrame(() => {
-        doUpdate();
-      }),
-    [doUpdate]
-  );
+  const onScroll = useCallback(() => doUpdate(), [doUpdate]);
 
   useEffect(() => {
     doUpdate();

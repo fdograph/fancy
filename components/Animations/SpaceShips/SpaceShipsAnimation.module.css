@@ -15,22 +15,18 @@
     0% {
         width: 0;
         height: 0;
-        border-width: 0;
     }
-    10% {
+    15% {
         width: var(--size);
         height: var(--size);
-        border-width: 4px;
     }
-    90% {
+    85% {
         width: var(--size);
         height: var(--size);
-        border-width: 4px;
     }
     100% {
         width: 0;
         height: 0;
-        border-width: 0;
     }
 }
 
@@ -57,9 +53,8 @@
     --start-pos-y: calc(var(--start-y) * 1px);
     --end-pos-x: calc(var(--end-x) * 1px + var(--size) * 2);
     --end-pos-y: calc(var(--end-y) * 1px);
-    --duration: 10000;
-    --offset: calc((var(--sign) * var(--rand) * var(--idx) * 2000) + 2000);
-    --delay: var(--offset);
+    --duration: 15000;
+    --delay: calc(var(--duration) * var(--rand));
     --duration-ms: calc(var(--duration) * 1ms);
     --delay-ms: calc(var(--delay) * 1ms);
     --duration-progress: calc((var(--progress) / 100) * var(--duration-ms));
@@ -75,7 +70,6 @@
     animation-name: CubeAnimation;
     animation-duration: calc(var(--duration-ms));
     animation-timing-function: linear;
-    animation-play-state: paused;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
     animation-delay: calc((var(--duration-progress) * -1) + var(--delay-ms));
@@ -85,23 +79,21 @@
     @apply absolute flex justify-center items-center bg-amber-500 border-2 border-neutral-900;
     width: var(--size);
     height: var(--size);
-    will-change: width, height, border-width;
+    border-width: 2px;
+    will-change: width, height;
 
     --duration: 10000;
-    --offset: calc(var(--idx) * 10 + (var(--rand) * 1000));
-    --delay: var(--offset);
+    --delay: 0;
     --duration-ms: calc(var(--duration) * 1ms);
     --delay-ms: calc(var(--delay) * 1ms);
     --duration-progress: calc((var(--progress) / 100) * var(--duration-ms));
 
-    --delay-offset: calc((var(--delay-ms) / 0.75) * var(--rand));
-
     animation-name: FaceAnimation;
-    animation-duration: calc(var(--duration-ms) - var(--delay-ms) - (var(--delay-ms) * 2 * var(--rand)));
+    animation-duration: calc(var(--duration-ms));
     animation-timing-function: linear;
     animation-play-state: paused;
     animation-fill-mode: both;
-    animation-delay: calc((var(--duration-progress) * -1) + var(--delay-offset));
+    animation-delay: calc((var(--duration-progress) * -1) + var(--delay-ms));
 }
 
 .FrontFace {

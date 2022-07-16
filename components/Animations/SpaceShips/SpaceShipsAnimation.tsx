@@ -1,6 +1,12 @@
 import React, { useCallback, useEffect, useMemo } from "react";
 import Styles from "./SpaceShipsAnimation.module.css";
-import { createPoint, lerp, rand } from "../../../utils/utls";
+import {
+  createLine,
+  createPoint,
+  lerp,
+  rand,
+  toNearestInterval,
+} from "../../../utils/utls";
 import classNames from "classnames";
 
 export const SpaceShipsAnimation: React.FC<{ progress: number }> = ({
@@ -22,9 +28,9 @@ export const SpaceShipsAnimation: React.FC<{ progress: number }> = ({
       return [];
     }
 
-    const wMax = Math.max(windowSize.wHeight, windowSize.wWidth);
+    const wMin = Math.min(windowSize.wHeight, windowSize.wWidth);
 
-    return Array.from({ length: Math.floor(wMax / 60) }, (_, i) => ({
+    return Array.from({ length: wMin / 40 }, (_, i) => ({
       a: rand(0, 100),
       b: rand(0, 1),
       c: rand(0, 1),
@@ -32,11 +38,19 @@ export const SpaceShipsAnimation: React.FC<{ progress: number }> = ({
   }, [windowSize]);
 
   const ships = seeds.map((seed, idx) => {
-    const size = 150;
-    const pointY = lerp(0, windowSize.wHeight, seed.a / 100);
-    const startPoint = createPoint(0, pointY);
-    const endPoint = createPoint(windowSize.wWidth, pointY - 100);
-    const key = `ship-${idx}-${seed.a}-${seed.b}-${seed.c}`;
+    const size = 100;
+    const upperBound = windowSize.wHeight * -0.125;
+    const lowerBound = windowSize.wHeight * 1.125;
+    const p = lerp(upperBound, lowerBound, seed.a / 100);
+    const pointY = toNearestInterval(p, size);
+    const line = createLine(
+      createPoint(windowSize.wWidth * -0.125, pointY),
+      windowSize.wWidth * 1.125,
+      10
+    );
+    const startPoint = line.a;
+    const endPoint = line.b;
+    const key = `cube-${idx}-${seed.a}-${seed.b}-${seed.c}`;
 
     return (
       <div
