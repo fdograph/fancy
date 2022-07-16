@@ -42,7 +42,8 @@ export const SpaceShipsAnimation: React.FC<{ progress: number }> = ({
     const upperBound = windowSize.wHeight * -0.125;
     const lowerBound = windowSize.wHeight * 1.125;
     const p = lerp(upperBound, lowerBound, seed.a / 100);
-    const pointY = toNearestInterval(p, size);
+    const cubeDiag = Math.round(Math.sqrt(size * 3));
+    const pointY = toNearestInterval(p, cubeDiag);
     const line = createLine(
       createPoint(windowSize.wWidth * -0.125, pointY),
       windowSize.wWidth * 1.125,
