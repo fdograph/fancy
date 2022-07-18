@@ -27,6 +27,9 @@ const Home: NextPage<HomeStaticProps> = (props) => (
       <SpaceShips />
       <Horizon />
       <Rays />
+      <SpaceShips />
+      <Horizon />
+      <Rays />
     </FancyContent>
   </div>
 );

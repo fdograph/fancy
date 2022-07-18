@@ -9,21 +9,28 @@
 
 @keyframes RayEffect {
     0% {
-        width: 0;
-        left: var(--base-left);
+        transform:
+                translateX(var(--base-left))
+                translateZ(0)
+                scaleX(0);
     }
-    25% {
-        left: calc(var(--base-left) + 60vmin * var(--sign) * -1);
+    33% {
+        transform:
+                translateX(calc(var(--base-left) + var(--size) * var(--sign) * -1))
+                translateZ(0)
+                scaleX(0.5);
     }
-    50% {
-        width: 60vmin;
-    }
-    75% {
-        left: calc(var(--base-left) + 60vmin * var(--sign));
+    66% {
+        transform:
+                translateX(calc(var(--base-left) + var(--size) * var(--sign)))
+                translateZ(0)
+                scaleX(1);
     }
     100% {
-        width: 0;
-        left: var(--base-left);
+        transform:
+                translateX(var(--base-left))
+                translateZ(0)
+                scaleX(0);
     }
 }
 
@@ -54,7 +61,8 @@
     --rand: 0;
     --sign: 1;
     --left: 0;
-    --base-left: calc(var(--left) * 1%);
+    --size: 70vmin;
+    --base-left: calc(var(--left) * 1px);
     --duration: 10000;
     --delay: calc(var(--rand) * var(--index));
     --duration-ms: calc(var(--duration) * 1ms);
@@ -63,11 +71,11 @@
 
     @apply absolute h-full top-0;
 
-    will-change: width, left;
+    will-change: transform;
     transform: translateZ(0);
     transform-origin: center center;
-    left: var(--base-left);
-    width: 0;
+    left: 0;
+    width: var(--size);
     animation-name: RayEffect;
     animation-duration: calc(var(--duration-ms) - var(--delay-ms));
     animation-timing-function: linear;

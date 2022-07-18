@@ -1,13 +1,21 @@
 @keyframes CubeAnimation {
     0% {
-        top: var(--start-pos-y);
-        left: var(--start-pos-x);
-        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        transform:
+                translateX(var(--start-pos-x))
+                translateY(var(--start-pos-y))
+                translateZ(0)
+                rotateX(0deg)
+                rotateY(0deg)
+                rotateZ(0deg);
     }
     100% {
-        top: var(--end-pos-y);
-        left: var(--end-pos-x);
-        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+        transform:
+                translateX(var(--end-pos-x))
+                translateY(var(--end-pos-y))
+                translateZ(0)
+                rotateX(360deg)
+                rotateY(360deg)
+                rotateZ(360deg);
     }
 }
 
@@ -63,9 +71,9 @@
     width: var(--size);
     height: var(--size);
     position: absolute;
-    top: var(--start-pos-y);
-    left: var(--start-pos-x);
-    will-change: top, left, transform;
+    top: 0;
+    left: 0;
+    will-change: transform;
 
     animation-name: CubeAnimation;
     animation-duration: calc(var(--duration-ms));
