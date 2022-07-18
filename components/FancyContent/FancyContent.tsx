@@ -2,7 +2,7 @@ import React, { useCallback, useEffect } from "react";
 import classNames from "classnames";
 
 import Styles from "./FancyContent.module.css";
-import { invLerp } from "../../utils/utls";
+import { clamp, invLerp } from "../../utils/utls";
 
 export interface FancyContentProps extends React.PropsWithChildren {
   className?: string;
@@ -42,7 +42,7 @@ export const FancyStaticContent: React.FC<FancyStaticContentProps> = ({
     const correctedHeight =
       parentRect.height - ref.current.offsetHeight || ref.current.offsetHeight;
     const lerpResult = invLerp(0, correctedHeight, correctedTop);
-    const progress = lerpResult * 100;
+    const progress = clamp(lerpResult * 100, 0, 100);
 
     if (showDebugLog) {
       console.log({
